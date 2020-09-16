@@ -35,6 +35,5 @@ export default class TodoList extends Component {
 const styles = StyleSheet.create({
 	list:{
 		flex:1,
-        marginTop:4,
     },
 });

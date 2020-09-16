@@ -20,8 +20,8 @@ export default class Card extends Component {
 const styles = StyleSheet.create({
     card:{
         borderRadius:8,
+        backgroundColor:"rgba(255,255,255,0.9)",
         elevation:4,
-        backgroundColor:"white",
         shadowOffset:{width:1,height:1},
         shadowColor:"#333",
         shadowOpacity:0.3,

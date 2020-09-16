@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View } from 'react-native'
+import { Text, StyleSheet, View, ImageBackground } from 'react-native'
 import { globalStyles } from './../config/globalStyles'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Card from '../components/Card'
+import Header from '../components/Header'
 
 export default class ReviewDetails extends Component {
     constructor(props){
@@ -13,9 +14,9 @@ export default class ReviewDetails extends Component {
 
     renderRating = ()=>{
         let stars = []
-        for (let index = 0; index < this.props.route.params.item.rating; index++) {
+        for (let val = 1; val <= 5; val++) {
             stars.push(
-                <Icon key={index} name="star" size={20} color="gold"></Icon>
+                <Icon key={val} name="star" size={20} color={val>this.props.route.params.item.rating?"lightgrey":"gold"}></Icon>
             )
         }
         return stars
@@ -23,7 +24,12 @@ export default class ReviewDetails extends Component {
 
     render() {
         return (
-            <View style={globalStyles.container}>
+            <ImageBackground 
+                style={globalStyles.container}
+                source={require('./../../assets/background.jpg')}
+                resizeMode="repeat"
+                resizeMethod="resize"
+            >
                 <Card>
                     <Text style={globalStyles.textTitle}> {this.props.route.params.item.title} </Text>
                     <View style={styles.rating}>
@@ -31,7 +37,7 @@ export default class ReviewDetails extends Component {
                     </View>
                     <Text style={globalStyles.textParagraph}> {this.props.route.params.item.body} </Text>
                 </Card>
-            </View>
+            </ImageBackground>
         )
     }
 }

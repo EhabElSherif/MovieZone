@@ -14,5 +14,13 @@ export const globalStyles = StyleSheet.create({
         fontSize: 18,
         marginVertical:8,
         lineHeight:20,
+    },
+    input:{
+        marginVertical:10,
+        padding:10,
+        borderBottomWidth:2,
+        borderBottomColor:"#999",
+        borderRadius:5,
+        backgroundColor:"#EEE",
     }
 });
